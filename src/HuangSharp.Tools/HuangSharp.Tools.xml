@@ -1,0 +1,1650 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HuangSharp.Tools</name>
+    </assembly>
+    <members>
+        <member name="T:HuangSharp.Extensions.DateTimeHelper">
+            <summary>
+                时间相关助手类
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.DateTimeHelper.FromMilliSecondsToLocalTime(System.Int64,System.String)">
+            <summary>
+                时间戳(毫秒)转本地时间的字符串
+            </summary>
+            <param name="timestamp">时间戳(毫秒)</param>
+            <param name="format">字符串格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.DateTimeHelper.FromSecondsToLocalTime(System.Int64,System.String)">
+            <summary>
+                时间戳(秒)转本地时间的字符串
+            </summary>
+            <param name="timestamp">时间戳(秒)</param>
+            <param name="format">字符串格式</param>
+            <returns></returns>
+        </member>
+        <member name="T:HuangSharp.Extensions.DictionaryExtensions">
+            <summary>
+                字典辅助扩展方法
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.DictionaryExtensions.GetOrDefault``2(System.Collections.Generic.IDictionary{``0,``1},``0)">
+            <summary>
+                从字典中获取值，不存在则返回字典<typeparamref name="TValue" />类型的默认值
+            </summary>
+            <typeparam name="TKey">字典键类型</typeparam>
+            <typeparam name="TValue">字典值类型</typeparam>
+            <param name="dictionary">要操作的字典</param>
+            <param name="key">指定键名</param>
+            <returns>获取到的值</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.DictionaryExtensions.GetOrAdd``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``1})">
+            <summary>
+                获取指定键的值，不存在则按指定委托添加值
+            </summary>
+            <typeparam name="TKey">字典键类型</typeparam>
+            <typeparam name="TValue">字典值类型</typeparam>
+            <param name="dictionary">要操作的字典</param>
+            <param name="key">指定键名</param>
+            <param name="addFunc">添加值的委托</param>
+            <returns>获取到的值</returns>
+        </member>
+        <member name="T:HuangSharp.Extensions.DynamicMethodHelper">
+            <summary>
+                动态方法助手类
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.DynamicMethodHelper.GetHandlerMethods``1(System.Type,System.String,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+                获取处理器实例的指定名称的全部方法
+            </summary>
+            <param name="handlerType"></param>
+            <param name="handlerName">处理器方法名称</param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.DynamicMethodHelper.BuildMethod``1(System.Type,System.String,System.Nullable{System.Reflection.BindingFlags},System.Func{``0,System.Threading.Tasks.Task})">
+            <summary>
+                构建一个动态调用方法
+            </summary>
+            <typeparam name="T">方法的参数类型</typeparam>
+            <param name="handlerInstanceType">方法所属的class类型</param>
+            <param name="handlerName">class中定义的方法名称</param>
+            <param name="bindingFlags">查找方法的方式(共有、私有等)</param>
+            <param name="notFoundAction">如果没有找到合适的方法的时候的回调方法</param>
+            <returns></returns>
+        </member>
+        <member name="T:HuangSharp.Extensions.EncryptHelper">
+            <summary>
+                常用加密相关助手类
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.PasswordEncrypt(System.String,System.String,System.Int32)">
+            <summary>
+                密码加密(不可逆)
+            </summary>
+            <param name="source">要加密的字符串</param>
+            <param name="salt">随机盐</param>
+            <param name="loopCount">要Hash运算的次数的次数</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.SHA1Encrypt(System.String)">
+            <summary>
+                SHA1加密
+            </summary>
+            <param name="value">要加密的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.SHA1Encrypt(System.Byte[])">
+            <summary>
+                SHA1加密
+            </summary>
+            <param name="value">要加密的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.SHA256Encrypt(System.String)">
+            <summary>
+                SHA256加密
+            </summary>
+            <param name="value">要加密的字符换</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.SHA256Encrypt(System.Byte[])">
+            <summary>
+                SHA256加密
+            </summary>
+            <param name="value">要加密的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.SHA384Encrypt(System.String)">
+            <summary>
+                SHA384加密
+            </summary>
+            <param name="value">要加密的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.SHA384Encrypt(System.Byte[])">
+            <summary>
+                SHA384加密
+            </summary>
+            <param name="value">要加密的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.SHA512Encrypt(System.String)">
+            <summary>
+                SHA512加密
+            </summary>
+            <param name="value">要加密的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.SHA512Encrypt(System.Byte[])">
+            <summary>
+                SHA512加密
+            </summary>
+            <param name="value">要加密的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.Base64Encrypt(System.String)">
+            <summary>
+                Base64加密
+            </summary>
+            <param name="value">要加密的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.Base64Encrypt(System.Byte[])">
+            <summary>
+                Base64加密
+            </summary>
+            <param name="value">要加密的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.Base64Decrypt(System.Char[],System.Int32,System.Int32)">
+            <summary>
+                Base64解密
+            </summary>
+            <param name="value"></param>
+            <param name="offset"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.Base64Decrypt(System.String)">
+            <summary>
+                Base64解密
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.Md5Encrypt(System.String,System.Boolean)">
+            <summary>
+                MD加密
+            </summary>
+            <param name="value">要加密的字符串</param>
+            <param name="isShort">是否为16位长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.Md5Encrypt(System.Byte[],System.Boolean)">
+            <summary>
+                MD加密
+            </summary>
+            <param name="value">要加密的值</param>
+            <param name="isShort">是否为16位长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.AESEncrypt(System.String,System.String,System.Byte[],System.Security.Cryptography.CipherMode,System.Security.Cryptography.PaddingMode)">
+            <summary>
+                AES加密
+            </summary>
+            <param name="content">要加密的字符串</param>
+            <param name="key">加密的密钥</param>
+            <param name="iv">向量值</param>
+            <param name="cipherMode">模式</param>
+            <param name="paddingMode">填充模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.AESEncrypt(System.Byte[],System.Byte[],System.Byte[],System.Security.Cryptography.CipherMode,System.Security.Cryptography.PaddingMode)">
+            <summary>
+                AES加密
+            </summary>
+            <param name="content">要加密的内容</param>
+            <param name="key">加密密钥</param>
+            <param name="iv">向量</param>
+            <param name="cipherMode">模式</param>
+            <param name="paddingMode">填充模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.AESDecryption(System.String,System.String,System.Byte[],System.Security.Cryptography.CipherMode,System.Security.Cryptography.PaddingMode)">
+            <summary>
+                AES解密
+            </summary>
+            <param name="content">要解密的内容</param>
+            <param name="key">密钥</param>
+            <param name="iv">向量</param>
+            <param name="cipherMode">模式</param>
+            <param name="paddingMode">填充模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.AESDecryption(System.Byte[],System.Byte[],System.Byte[],System.Security.Cryptography.CipherMode,System.Security.Cryptography.PaddingMode)">
+            <summary>
+                AES解密
+            </summary>
+            <param name="content">要解密的内容</param>
+            <param name="key">密钥</param>
+            <param name="iv">向量</param>
+            <param name="cipherMode">模式</param>
+            <param name="paddingMode">填充模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.HMACSHA1Encrypt(System.String,System.String)">
+            <summary>
+                HMACSHA1加密
+            </summary>
+            <param name="source"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EncryptHelper.HMACSHA1Encrypt(System.Byte[],System.Byte[])">
+            <summary>
+                HMACSHA1加密
+            </summary>
+            <param name="source"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HuangSharp.Extensions.EnumExtensions">
+            <summary>
+                枚举<see cref="T:System.Enum" />的扩展辅助操作方法
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.GetEnumNames(System.Enum)">
+            <summary>
+                获取枚举的全部的名称、值等
+            </summary>
+            <param name="enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.GetEnumFalgsItems``1(``0)">
+            <summary>
+                获取Falgs枚举包含的全部枚举
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.IsEnumSingleValue``1(``0)">
+            <summary>
+                判断枚举是否包含多个值,Flags标识的枚举可能包含多个值
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.GetDisplayName(System.Enum,System.Boolean,System.Boolean)">
+            <summary>
+                获取枚举上的DisplayAttribute特性的Name属性
+            </summary>
+            <param name="enum"></param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.GetDisplayNames``1(``0,System.Boolean,System.Boolean)">
+            <summary>
+                获取Flags标识的枚举值所包含的全部枚举的DisplayAttribute特性的Name属性
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="enum"></param>
+            <param name="isCulture"></param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.GetDisplayShortName(System.Enum,System.Boolean,System.Boolean)">
+            <summary>
+                获取枚举的DisplayAttribute的ShortName
+            </summary>
+            <param name="enum"></param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.GetDisplayShortNames``1(``0,System.Boolean,System.Boolean)">
+            <summary>
+                获取Flags标识的枚举值所包含的全部枚举的DisplayAttribute特性的ShortName属性
+            </summary>
+            <param name="enum"></param>
+            <param name="isCulture"></param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.GetDisplayDescription(System.Enum,System.Boolean,System.Boolean)">
+            <summary>
+                获取枚举上的DisplayAttribute特性的Description属性
+            </summary>
+            <param name="enum"></param>
+            <param name="isCulture"></param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.GetDisplayDescriptions``1(``0,System.Boolean,System.Boolean)">
+            <summary>
+                获取Flags标识的枚举值所包含的全部枚举的DisplayAttribute特性的Description属性
+            </summary>
+            <param name="enum"></param>
+            <param name="isCulture"></param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.ToByte(System.Enum)">
+            <summary>
+                获取枚举的值
+            </summary>
+            <param name="enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.ToShort(System.Enum)">
+            <summary>
+                获取枚举的值
+            </summary>
+            <param name="enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.ToInt32(System.Enum)">
+            <summary>
+                获取枚举的值
+            </summary>
+            <param name="enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.ToInt64(System.Enum)">
+            <summary>
+                获取枚举的值
+            </summary>
+            <param name="enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.GetEnumItems(System.Enum)">
+            <summary>
+                获取枚举的全部项
+            </summary>
+            <param name="enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.EnumExtensions.GetEnumItems``1(``0)">
+            <summary>
+                获取枚举的全部项
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="enum"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HuangSharp.Extensions.IntegerHelper">
+            <summary>
+                整形相关操作助手
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.IntegerHelper.GuidToNumber(System.Guid)">
+            <summary>
+                GUID转成一个数字
+            </summary>
+            <param name="guid">要处理的GUID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.IntegerHelper.GetRange(System.Int32,System.Int32)">
+            <summary>
+                生成一组连续的整数
+            </summary>
+            <param name="start">开始的整数</param>
+            <param name="end">结束的整数(小于end)</param>
+            <returns></returns>
+        </member>
+        <member name="T:HuangSharp.Extensions.ObjectExtensions">
+            <summary>
+                基类型 <see cref="T:System.Object" /> 扩展辅助操作类
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.ObjectExtensions.CastTo(System.Object,System.Type)">
+            <summary>
+            把对象类型转换为指定类型
+            </summary>
+            <param name="value"></param>
+            <param name="conversionType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.ObjectExtensions.CastTo``1(System.Object)">
+            <summary>
+            把对象类型转化为指定类型
+            </summary>
+            <typeparam name="T"> 动态类型 </typeparam>
+            <param name="value"> 要转化的源对象 </param>
+            <returns> 转化后的指定类型的对象，转化失败引发异常。 </returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.ObjectExtensions.CastTo``1(System.Object,``0)">
+            <summary>
+            把对象类型转化为指定类型，转化失败时返回指定的默认值
+            </summary>
+            <typeparam name="T"> 动态类型 </typeparam>
+            <param name="value"> 要转化的源对象 </param>
+            <param name="defaultValue"> 转化失败返回的指定默认值 </param>
+            <returns> 转化后的指定类型对象，转化失败时返回指定的默认值 </returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.ObjectExtensions.ToDynamic(System.Object)">
+            <summary>
+            将对象[主要是匿名对象]转换为dynamic
+            </summary>
+        </member>
+        <member name="T:HuangSharp.Extensions.RandomExtensions">
+            <summary>
+                随机数<see cref="T:System.Random" />类型的扩展辅助操作类
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextBoolean(System.Random)">
+            <summary>
+                返回随机布尔值
+            </summary>
+            <param name="random"></param>
+            <returns>随机布尔值</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextEnum``1(System.Random)">
+            <summary>
+                返回指定枚举类型的随机枚举值
+            </summary>
+            <param name="random"></param>
+            <returns>指定枚举类型的随机枚举值</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextBytes(System.Random,System.Int32)">
+            <summary>
+                返回随机数填充的指定长度的数组
+            </summary>
+            <param name="random"></param>
+            <param name="length">数组长度</param>
+            <returns>随机数填充的指定长度的数组</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextItem``1(System.Random,``0[])">
+            <summary>
+                返回数组中的随机元素
+            </summary>
+            <typeparam name="T">元素类型</typeparam>
+            <param name="random"></param>
+            <param name="items">元素数组</param>
+            <returns>元素数组中的某个随机项</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextDateTime(System.Random,System.DateTime,System.DateTime)">
+            <summary>
+                返回指定时间段内的随机时间值
+            </summary>
+            <param name="random"></param>
+            <param name="minValue">时间范围的最小值</param>
+            <param name="maxValue">时间范围的最大值</param>
+            <returns>指定时间段内的随机时间值</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextDateTime(System.Random)">
+            <summary>
+                返回随机时间值
+            </summary>
+            <param name="random"></param>
+            <returns>随机时间值</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextNumberString(System.Random,System.Int32)">
+            <summary>
+                获取指定的长度的随机数字字符串
+            </summary>
+            <param name="random"></param>
+            <param name="length">要获取随机数长度</param>
+            <returns>指定长度的随机数字符串</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextLetterString(System.Random,System.Int32)">
+            <summary>
+                获取指定的长度的随机字母字符串
+            </summary>
+            <param name="random"></param>
+            <param name="length">要获取随机数长度</param>
+            <returns>指定长度的随机字母组成字符串</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextLetterAndNumberString(System.Random,System.Int32)">
+            <summary>
+                获取指定的长度的随机字母和数字字符串
+            </summary>
+            <param name="random"></param>
+            <param name="length">要获取随机数长度</param>
+            <returns>指定长度的随机字母和数字组成字符串</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextSurName(System.Random)">
+            <summary>
+                获取随机的姓名
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextNationName(System.Random)">
+            <summary>
+                获取随机的民族
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextPhoneNumber(System.Random,System.String[])">
+            <summary>
+                获取随机手机号
+            </summary>
+            <param name="random"></param>
+            <param name="sections">指定手机号段，号段字符串必须是7位数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextIdentityCardId(System.Random,System.String[])">
+            <summary>
+                获取随机身份证号
+            </summary>
+            <param name="random"></param>
+            <param name="areaCodes">指定的地区码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextItems``1(System.Random,``0[],System.Int32,``0[])">
+            <summary>
+                从指定源集合中获取排除指定元素的指定个数的随机项集合
+            </summary>
+            <typeparam name="T">项类型</typeparam>
+            <param name="random"></param>
+            <param name="source">源集合</param>
+            <param name="count">要获取的子集合的项数量</param>
+            <param name="excepts">要排除的项集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.NextItems(System.Random,System.Int32,System.Int32,System.Int32,System.Int32[])">
+            <summary>
+                从指定数值范围中获取排除指定数值外的指定个数随机数值集合
+            </summary>
+            <param name="random"></param>
+            <param name="min">数值范围小值</param>
+            <param name="max">数值范围大值</param>
+            <param name="count">要获取的子集合元素数量</param>
+            <param name="excepts">要排除的数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.GetRandomNumber(System.Int32,System.Int32)">
+            <summary>
+                生成随机数
+            </summary>
+            <param name="min">随机数的最小数</param>
+            <param name="max">随机数的最大数</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.RandomExtensions.GetSeed">
+            <summary>
+                获取一个随机数种子
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HuangSharp.Extensions.StringHelper">
+            <summary>
+                字符串助手类
+            </summary>
+        </member>
+        <member name="F:HuangSharp.Extensions.StringHelper._allChars">
+            <summary>
+                26个英文字母
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.StringHelper.Compare(System.String,System.String,System.Boolean)">
+            <summary>
+                比较两个字符串是否相等
+            </summary>
+            <param name="strA">字符串a</param>
+            <param name="strB">字符串b</param>
+            <param name="ignoreCase">是否忽略大小写</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.StringHelper.IsNullOrEmptyOrSpace(System.String)">
+            <summary>
+                字符串是否为null或者空字符串或者是空格字符串
+            </summary>
+            <param name="str">要判断的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.StringHelper.GetDisplayString(System.String,System.Int32,System.Int32,System.Char)">
+            <summary>
+                获取替换掉指定范围的字符后的字符串
+            </summary>
+            <param name="source">源字符串</param>
+            <param name="startIndex">从第几个开是替换</param>
+            <param name="endIndex">到第几个字符结束</param>
+            <param name="character">隐藏部分显示的字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.StringHelper.GetFixLengthNumber(System.Int16)">
+            <summary>
+                生成固定长度的随机纯数字字符串(不保证重复)
+            </summary>
+            <param name="length">字符串的长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.StringHelper.GetFixLengthString(System.Int16)">
+            <summary>
+                生成固定长度的纯字母字符串
+            </summary>
+            <param name="length">字符串的长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.StringHelper.GetRandomFileName">
+            <summary>
+                生成随机文件名(保证不重复)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.StringHelper.NewIdWithGuid">
+            <summary>
+                根据GUID生成唯一ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.StringHelper.NewIdWithGuid(System.Guid)">
+            <summary>
+                根据GUID生成唯一ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.StringHelper.NewIdForShortWithGuid">
+            <summary>
+                GUID压缩到12位的字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.StringHelper.NewIdForShortWithGuid(System.Guid)">
+            <summary>
+                GUID压缩到12位的字符串
+            </summary>
+            <param name="guid">要处理的GUID</param>
+            <returns></returns>
+        </member>
+        <member name="T:HuangSharp.Extensions.TypeExtensions">
+            <summary>
+            类型 <see cref="T:System.Type"/> 辅助扩展方法类
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsDeriveClassFrom``1(System.Type,System.Boolean)">
+            <summary>
+                判断当前类型是否可由指定类型派生
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsDeriveClassFrom(System.Type,System.Type,System.Boolean)">
+            <summary>
+                判断当前类型是否可由指定类型派生
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsNullableType(System.Type)">
+            <summary>
+                判断类型是否为Nullable类型
+            </summary>
+            <param name="type"> 要处理的类型 </param>
+            <returns> 是返回True，不是返回False </returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.GetNonNullableType(System.Type)">
+            <summary>
+                由类型的Nullable类型返回实际类型
+            </summary>
+            <param name="type"> 要处理的类型对象 </param>
+            <returns> </returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.GetUnNullableType(System.Type)">
+            <summary>
+                通过类型转换器获取Nullable类型的基础类型
+            </summary>
+            <param name="type"> 要处理的类型对象 </param>
+            <returns> </returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.GetDescription(System.Type,System.Boolean)">
+            <summary>
+                获取类型的Description特性描述信息
+            </summary>
+            <param name="type">类型对象</param>
+            <param name="inherit">是否搜索类型的继承链以查找描述特性</param>
+            <returns>返回Description特性描述信息，如不存在则返回类型的全名</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.GetDescription(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+                获取成员元数据的Description特性描述信息
+            </summary>
+            <param name="member">成员元数据对象</param>
+            <param name="inherit">是否搜索成员的继承链以查找描述特性</param>
+            <returns>返回Description特性描述信息，如不存在则返回成员的名称</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.HasAttribute``1(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+                检查指定指定类型成员中是否存在指定的Attribute特性
+            </summary>
+            <typeparam name="T">要检查的Attribute特性类型</typeparam>
+            <param name="memberInfo">要检查的类型成员</param>
+            <param name="inherit">是否从继承中查找</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.GetAttribute``1(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+                从类型成员获取指定Attribute特性
+            </summary>
+            <typeparam name="T">Attribute特性类型</typeparam>
+            <param name="memberInfo">类型类型成员</param>
+            <param name="inherit">是否从继承中查找</param>
+            <returns>存在返回第一个，不存在返回null</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.GetAttributes``1(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+                从类型成员获取指定Attribute特性
+            </summary>
+            <typeparam name="T">Attribute特性类型</typeparam>
+            <param name="memberInfo">类型类型成员</param>
+            <param name="inherit">是否从继承中查找</param>
+            <returns>返回所有指定Attribute特性的数组</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsEnumerable(System.Type)">
+            <summary>
+                判断类型是否为集合类型
+            </summary>
+            <param name="type">要处理的类型</param>
+            <returns>是返回True，不是返回False</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsGenericAssignableFrom(System.Type,System.Type)">
+            <summary>
+                判断当前泛型类型是否可由指定类型的实例填充
+            </summary>
+            <param name="genericType">泛型类型</param>
+            <param name="type">指定类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsGenericFor(System.Type,System.Type)">
+            <summary>
+                判断当前类型是否为指定类型泛型
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsBaseOn(System.Type,System.Type)">
+            <summary>
+                返回当前类型是否是指定基类的派生类
+            </summary>
+            <param name="type">当前类型</param>
+            <param name="baseType">要判断的基类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsBaseOn``1(System.Type)">
+            <summary>
+                返回当前类型是否是指定基类的派生类
+            </summary>
+            <typeparam name="TBaseType">要判断的基类型</typeparam>
+            <param name="type">当前类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsAsync(System.Reflection.MethodInfo)">
+            <summary>
+                方法是否是异步
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsOverridden(System.Reflection.MethodInfo)">
+            <summary>
+                返回当前方法信息是否是重写方法
+            </summary>
+            <param name="method">要判断的方法信息</param>
+            <returns>是否是重写方法</returns>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.IsVirtual(System.Reflection.PropertyInfo)">
+            <summary>
+                返回当前属性信息是否为virtual
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.GetFullNameWithModule(System.Type)">
+            <summary>
+                获取类型的全名，附带所在类库
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.ShortDisplayName(System.Type)">
+            <summary>
+                获取类型的显示短名称
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Extensions.TypeExtensions.DisplayName(System.Type,System.Boolean)">
+            <summary>
+                获取类型的显示名称
+            </summary>
+        </member>
+        <member name="T:HuangSharp.GuardClauses.IGuardClause">
+            <summary>
+                守卫最小 单元接口，简单的接口提供了一种通用机制，用于从中构建保护子句扩展方法。
+            </summary>
+        </member>
+        <member name="T:HuangSharp.GuardClauses.Guard">
+            <summary>
+                守卫默认实现类
+            </summary>
+        </member>
+        <member name="P:HuangSharp.GuardClauses.Guard.Against">
+            <summary>
+                守卫入口
+            </summary>
+            <example>
+                Guard.Against.Null(order, nameof(order));
+            </example>
+        </member>
+        <member name="T:HuangSharp.GuardClauses.GuardClauseExtensions">
+            <summary>
+                守卫 InvalidFormat 扩展
+            </summary>
+            <summary>
+            守卫 Expression 扩展
+            </summary>
+            <summary>
+                守卫 Negative 扩展
+            </summary>
+            <summary>
+                守卫 NotFound 扩展
+            </summary>
+            <summary>
+                守卫 Null 扩展
+            </summary>
+            <summary>
+            守卫 outofRange 扩展
+            </summary>
+            <summary>
+                守卫 Zero 扩展
+            </summary>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.InvalidFormat(HuangSharp.GuardClauses.IGuardClause,System.String,System.String,System.String,System.String)">
+            <summary>
+                如果 输入 <paramref name="input" /> 不匹配指定的 <paramref name="regexPattern" /> 则抛出异常 <see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="regexPattern"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.InvalidInput``1(HuangSharp.GuardClauses.IGuardClause,``0,System.String,System.Func{``0,System.Boolean},System.String)">
+            <summary>
+                如果 输入 <paramref name="input" /> 不满足指定的 <paramref name="predicate" /> 函数，则抛出异常 <see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="predicate"></param>
+            <param name="message">可选. 自定义异常消息</param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.InvalidInputAsync``1(HuangSharp.GuardClauses.IGuardClause,``0,System.String,System.Func{``0,System.Threading.Tasks.Task{System.Boolean}},System.String)">
+            <summary>
+                如果输出  <paramref name="input" /> 不满足指定的 <paramref name="predicate" /> 函数要求，则抛出异常 <see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="predicate"></param>
+            <param name="message">可选. 自定义异常消息</param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.AgainstExpression``1(HuangSharp.GuardClauses.IGuardClause,System.Func{``0,System.Boolean},``0,System.String)">
+            <summary>
+            如果给定的输入 <paramref name="input"/> 在表达式 <paramref name="func"/> 中评估的返回值为 false 则抛出异常 <see cref="T:System.ArgumentException" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="func"></param>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="message"></param>
+            <returns>  如果 <paramref name="func"/> 评估为 true ，返回原始输入 <paramref name="input"/></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.AgainstExpressionAsync``1(HuangSharp.GuardClauses.IGuardClause,System.Func{``0,System.Threading.Tasks.Task{System.Boolean}},``0,System.String)">
+            <summary>
+            如果给定的输入 <paramref name="input"/> 在表达式 <paramref name="func"/> 中评估的返回值为 false 则抛出异常 <see cref="T:System.ArgumentException" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="func"></param>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="message"></param>
+            <returns>  如果 <paramref name="func"/> 评估为 true ，返回原始输入 <paramref name="input"/></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Negative(HuangSharp.GuardClauses.IGuardClause,System.Int32,System.String,System.String)">
+            <summary>
+                如果输入 <paramref name="input" /> 是负数，则抛出异常 <see cref="T:System.ArgumentException" /> 。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Negative(HuangSharp.GuardClauses.IGuardClause,System.Int64,System.String,System.String)">
+            <summary>
+                如果输入 <paramref name="input" /> 是负数，则抛出异常 <see cref="T:System.ArgumentException" /> 。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Negative(HuangSharp.GuardClauses.IGuardClause,System.Decimal,System.String,System.String)">
+            <summary>
+                如果输入 <paramref name="input" /> 是负数，则抛出异常 <see cref="T:System.ArgumentException" /> 。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Negative(HuangSharp.GuardClauses.IGuardClause,System.Single,System.String,System.String)">
+            <summary>
+                如果输入 <paramref name="input" /> 是负数，则抛出异常 <see cref="T:System.ArgumentException" /> 。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Negative(HuangSharp.GuardClauses.IGuardClause,System.Double,System.String,System.String)">
+            <summary>
+                如果输入 <paramref name="input" /> 是负数，则抛出异常 <see cref="T:System.ArgumentException" /> 。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Negative(HuangSharp.GuardClauses.IGuardClause,System.TimeSpan,System.String,System.String)">
+            <summary>
+                如果输入 <paramref name="input" /> 是负数，则抛出异常 <see cref="T:System.ArgumentException" /> 。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Negative``1(HuangSharp.GuardClauses.IGuardClause,``0,System.String,System.String)">
+            <summary>
+                如果输入 <paramref name="input" /> 是负数，则抛出异常 <see cref="T:System.ArgumentException" /> 。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NegativeOrZero(HuangSharp.GuardClauses.IGuardClause,System.Int32,System.String,System.String)">
+            <summary>
+                Throws an <see cref="T:System.ArgumentException" /> if <paramref name="input" /> is negative 或 0.
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值 或 0.</returns>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NegativeOrZero(HuangSharp.GuardClauses.IGuardClause,System.Int64,System.String,System.String)">
+            <summary>
+                Throws an <see cref="T:System.ArgumentException" /> if <paramref name="input" /> is negative 或 0.
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值 或 0.</returns>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NegativeOrZero(HuangSharp.GuardClauses.IGuardClause,System.Decimal,System.String,System.String)">
+            <summary>
+                Throws an <see cref="T:System.ArgumentException" /> if <paramref name="input" /> is negative 或 0.
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值 或 0.</returns>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NegativeOrZero(HuangSharp.GuardClauses.IGuardClause,System.Single,System.String,System.String)">
+            <summary>
+                Throws an <see cref="T:System.ArgumentException" /> if <paramref name="input" /> is negative 或 0.
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是 负值 或 0.</returns>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NegativeOrZero(HuangSharp.GuardClauses.IGuardClause,System.Double,System.String,System.String)">
+            <summary>
+                Throws an <see cref="T:System.ArgumentException" /> if <paramref name="input" /> is negative 或 0.
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是 负值 或 0.</returns>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NegativeOrZero(HuangSharp.GuardClauses.IGuardClause,System.TimeSpan,System.String,System.String)">
+            <summary>
+                Throws an <see cref="T:System.ArgumentException" /> if <paramref name="input" /> is negative 或 0.
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值 或 0.</returns>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NegativeOrZero``1(HuangSharp.GuardClauses.IGuardClause,``0,System.String,System.String)">
+            <summary>
+                Throws an <see cref="T:System.ArgumentException" /> if <paramref name="input" /> is negative 或 0.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选. 自定义异常</param>
+            <returns><paramref name="input" /> 如果数值不是负值 或 0.</returns>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NotFound``1(HuangSharp.GuardClauses.IGuardClause,System.String,``0,System.String)">
+            <summary>
+            如果输入 <paramref name="input" /> 中的 <paramref name="key" /> 不存在，则抛出异常 <see cref="T:HuangSharp.GuardClauses.NotFoundException" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="guardClause"></param>
+            <param name="key"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <returns><paramref name="input" /> if the value is not null.</returns>
+            <exception cref="T:HuangSharp.GuardClauses.NotFoundException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NotFound``2(HuangSharp.GuardClauses.IGuardClause,``0,``1,System.String)">
+            <summary>
+            如果输入 <paramref name="input" /> 中的 <paramref name="key" /> 不存在，则抛出异常 <see cref="T:HuangSharp.GuardClauses.NotFoundException" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="guardClause"></param>
+            <param name="key"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <returns><paramref name="input" /> if the value is not null.</returns>
+            <exception cref="T:HuangSharp.GuardClauses.NotFoundException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Null``1(HuangSharp.GuardClauses.IGuardClause,``0,System.String,System.String)">
+            <summary>
+                如果 输入 <paramref name="input" /> 为 null ，则抛出异常 <see cref="T:System.ArgumentNullException" /> 。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值不为 null.</returns>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NullOrEmpty(HuangSharp.GuardClauses.IGuardClause,System.String,System.String,System.String)">
+            <summary>
+                如果 输入 <paramref name="input" /> 为 null 或 空字符串，则抛出异常 <see cref="T:System.ArgumentNullException" /> 。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值不是 空字符串 或 null.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NullOrEmpty(HuangSharp.GuardClauses.IGuardClause,System.Nullable{System.Guid},System.String,System.String)">
+            <summary>
+                如果 输入 <paramref name="input" /> 为 null 或 Empty guid，则抛出异常 <see cref="T:System.ArgumentNullException" /> 。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值不为 empty guid 或 null.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NullOrEmpty``1(HuangSharp.GuardClauses.IGuardClause,System.Collections.Generic.IEnumerable{``0},System.String,System.String)">
+            <summary>
+                如果 输入 <paramref name="inputs" /> 为 null ，则抛出异常 <see cref="T:System.ArgumentNullException" /> 。
+                Throws an <see cref="T:System.ArgumentException" /> if <paramref name="inputs" /> is an empty enumerable.
+            </summary>
+            <param name="guardClause"></param>
+            <param name="inputs"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="inputs" /> if the value is not an empty enumerable or null.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NullOrWhiteSpace(HuangSharp.GuardClauses.IGuardClause,System.String,System.String,System.String)">
+            <summary>
+                如果 输入 <paramref name="input" /> 为 null ，则抛出异常 <see cref="T:System.ArgumentNullException" /> 。
+                Throws an <see cref="T:System.ArgumentException" /> if <paramref name="input" /> is an empty or white space string.
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> if the value is not an empty or whitespace string.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Default``1(HuangSharp.GuardClauses.IGuardClause,``0,System.String,System.String)">
+            <summary>
+                如果输入参数 <paramref name="input" /> 是指定类型的默认值，则抛出异常。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值不是是指定类型的默认值</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.NullOrInvalidInput``1(HuangSharp.GuardClauses.IGuardClause,``0,System.String,System.Func{``0,System.Boolean},System.String)">
+            <summary>
+                如果输入参数 <paramref name="input" /> 为 null，则抛出异常 <see cref="T:System.ArgumentNullException" />
+                如果输入参数 <paramref name="input" /> 不满足 <paramref name="predicate" /> 函数，则抛出异常 <see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="predicate"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.EnumOutOfRange``1(HuangSharp.GuardClauses.IGuardClause,System.Int32,System.String,System.String)">
+            <summary>
+            如果输入参数 <paramref name="input"/> 不是有效的枚举值，则抛出异常 <see cref="T:System.ComponentModel.InvalidEnumArgumentException" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值没有超出范围.</returns>
+            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.EnumOutOfRange``1(HuangSharp.GuardClauses.IGuardClause,``0,System.String,System.String)">
+            <summary>
+            如果输入参数 <paramref name="input"/> 不是有效的枚举值，则抛出异常 <see cref="T:System.ComponentModel.InvalidEnumArgumentException" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            /// <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值没有超出范围.</returns>
+            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.OutOfRange``1(HuangSharp.GuardClauses.IGuardClause,System.Collections.Generic.IEnumerable{``0},System.String,``0,``0,System.String)">
+            <summary>
+            如果任何输入参数 <paramref name="input"/>的 item 小于 <paramref name="rangeFrom"/> 或 大于<paramref name="rangeTo"/>，则抛出<see cref="T:System.ArgumentOutOfRangeException" />。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="rangeFrom"></param>
+            <param name="rangeTo"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 任意一项都不能超出范围.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.OutOfDateRange(HuangSharp.GuardClauses.IGuardClause,System.DateTime,System.String,System.String)">
+            <summary>
+            如果输入参数 <paramref name="input" /> 不是一个友好且有效的时间范围内的值，则抛出异常  <see cref="T:System.ArgumentOutOfRangeException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息。</param>
+            <returns> <paramref name="input" /> 如果值是一个有好的且有效的时间范围内的值。</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.OutOfRange``1(HuangSharp.GuardClauses.IGuardClause,``0,System.String,``0,``0,System.String)">
+            <summary>
+            如果输入参数 <paramref name="input"/> 小于 <paramref name="rangeFrom"/> 或 大于 <paramref name="rangeTo"/>，则抛出<see cref="T:System.ArgumentOutOfRangeException" />异常。
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="rangeFrom"></param>
+            <param name="rangeTo"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值没有超出范围.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Zero(HuangSharp.GuardClauses.IGuardClause,System.Int32,System.String,System.String)">
+            <summary>
+                如果输入参数 <paramref name="input" /> 为 0，则抛出异常<see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值不是0.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Zero(HuangSharp.GuardClauses.IGuardClause,System.Int64,System.String,System.String)">
+            <summary>
+                如果输入参数 <paramref name="input" /> 为 0，则抛出异常<see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值不是0.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Zero(HuangSharp.GuardClauses.IGuardClause,System.Decimal,System.String,System.String)">
+            <summary>
+                如果输入参数 <paramref name="input" /> 为 0，则抛出异常<see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值不是0.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Zero(HuangSharp.GuardClauses.IGuardClause,System.Single,System.String,System.String)">
+            <summary>
+                如果输入参数 <paramref name="input" /> 为 0，则抛出异常<see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值不是0.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Zero(HuangSharp.GuardClauses.IGuardClause,System.Double,System.String,System.String)">
+            <summary>
+                如果输入参数 <paramref name="input" /> 为 0，则抛出异常<see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值不是0.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Zero(HuangSharp.GuardClauses.IGuardClause,System.TimeSpan,System.String)">
+            <summary>
+                如果输入参数 <paramref name="input" /> 为 0，则抛出异常<see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <returns><paramref name="input" /> 如果值不是0.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.GuardClauseExtensions.Zero``1(HuangSharp.GuardClauses.IGuardClause,``0,System.String,System.String)">
+            <summary>
+                如果输入参数 <paramref name="input" /> 为 0，则抛出异常<see cref="T:System.ArgumentException" />
+            </summary>
+            <param name="guardClause"></param>
+            <param name="input"></param>
+            <param name="parameterName"></param>
+            <param name="message">可选，自定义异常消息</param>
+            <returns><paramref name="input" /> 如果值不是0.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:HuangSharp.GuardClauses.NotFoundException">
+            <summary>
+            如果按特定键查询的对象为空（未找到）时发生的错误
+            </summary>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.NotFoundException.#ctor(System.String,System.String)">
+            <summary>
+            实例化一个新的 <see cref="T:HuangSharp.GuardClauses.NotFoundException"/> 对象的新实例
+            </summary>
+            <param name="objectName">查询对象名称</param>
+            <param name="key">查询对象的值</param>
+        </member>
+        <member name="M:HuangSharp.GuardClauses.NotFoundException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            实例化一个新的 <see cref="T:HuangSharp.GuardClauses.NotFoundException"/> 对象的新实例
+            </summary>
+            <param name="objectName">查询对象名称.</param>
+            <param name="key">查询对象的值</param>
+            <param name="innerException">当前异常的起因</param>
+        </member>
+        <member name="T:HuangSharp.GuardClauses.ValidatedNotNullAttribute">
+            <summary>
+                添加到方法中以便于检查输入是否为空，如果输入为空，则抛出异常
+            </summary>
+        </member>
+        <member name="T:HuangSharp.Helpers.AttributeHelper">
+            <summary>
+                Attribute相关的助手类
+            </summary>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayName(System.Enum,System.Boolean,System.Boolean)">
+            <summary>
+                获取枚举的DisplayAttribute的Name
+            </summary>
+            <param name="enum"></param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayShortName(System.Enum,System.Boolean,System.Boolean)">
+            <summary>
+                获取枚举的DisplayAttribute的ShortName
+            </summary>
+            <param name="enum"></param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayDescription(System.Enum,System.Boolean,System.Boolean)">
+            <summary>
+                获取枚举的DisplayAttribute的Description
+            </summary>
+            <param name="enum"></param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetCustomAttributeByField``2(``1,System.String,System.Boolean)">
+            <summary>
+                获取对象字段上的特性
+            </summary>
+            <typeparam name="TReturn">特性类型</typeparam>
+            <typeparam name="TInput">对象类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetCustomAttributesByField``2(``1,System.String,System.Boolean)">
+            <summary>
+                获取对象字段上的特性集合
+            </summary>
+            <typeparam name="TReturn">特性类型</typeparam>
+            <typeparam name="TInput">对象类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetCustomAttributeByField``1(System.Object,System.String,System.Boolean)">
+            <summary>
+                获取对象字段上的特性
+            </summary>
+            <typeparam name="T">特性类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetCustomAttributesByField``1(System.Object,System.String,System.Boolean)">
+            <summary>
+                获取对象字段上的特性集合
+            </summary>
+            <typeparam name="T">特性类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetCustomAttributesByField(System.Object,System.String,System.Boolean)">
+            <summary>
+                获取对象字段上的特性集合
+            </summary>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetCustomAttributeByProperty``2(``1,System.String,System.Boolean)">
+            <summary>
+                获取对象属性上的特性
+            </summary>
+            <typeparam name="TReturn">特性类型</typeparam>
+            <typeparam name="TInput">对象类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="propertyName">属性名称</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetCustomAttributesByProperty``2(``1,System.String,System.Boolean)">
+            <summary>
+                获取对象属性上的特性
+            </summary>
+            <typeparam name="TReturn">特性类型</typeparam>
+            <typeparam name="TInput">对象类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="propertyName">属性名称</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetCustomAttributeByProperty``1(System.Object,System.String,System.Boolean)">
+            <summary>
+                获取对象属性上的特性
+            </summary>
+            <typeparam name="T">特性类型</typeparam>
+            <param name="object">对象类型</param>
+            <param name="propertyName">属性名称</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetCustomAttributesByProperty``1(System.Object,System.String,System.Boolean)">
+            <summary>
+                获取对象属性上的特性
+            </summary>
+            <typeparam name="T">特性类型</typeparam>
+            <param name="object">对象类型</param>
+            <param name="propertyName">属性名称</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetCustomAttributesByProperty(System.Object,System.String,System.Boolean)">
+            <summary>
+                获取对象属性上的特性
+            </summary>
+            <param name="object">对象类型</param>
+            <param name="propertyName">属性名称</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayShortNameWithField``1(``0,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取字段上的DisplayAttribute特性的ShortName值
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayShortNameWithField(System.Object,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取字段上的DisplayAttribute特性的Name值
+            </summary>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayShortNameWithProperty``1(``0,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取属性上的DisplayAttribute特性的Name值
+            </summary>
+            <typeparam name="T">要操作的对象类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="propertyName">属性名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayShortNameWithProperty(System.Object,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取属性上的DisplayAttribute特性的Name值
+            </summary>
+            <param name="object">要操作的对象</param>
+            <param name="propertyName">属性名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayNameWithField``1(``0,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取字段上的DisplayAttribute特性的Name值
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayNameWithField(System.Object,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取字段上的DisplayAttribute特性的Name值
+            </summary>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayNameWithProperty``1(``0,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取属性上的DisplayAttribute特性的Name值
+            </summary>
+            <typeparam name="T">要操作的对象类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="propertyName">属性名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayNameWithProperty(System.Object,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取属性上的DisplayAttribute特性的Name值
+            </summary>
+            <param name="object">要操作的对象</param>
+            <param name="propertyName">属性名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayDescriptionWithField``1(``0,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取字段上的DisplayAttribute特性的Description值
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayDescriptionWithField(System.Object,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取字段上的DisplayAttribute特性的Description值
+            </summary>
+            <param name="object">要操作的对象</param>
+            <param name="fieldName">字段名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayDescriptionWithProperty``1(``0,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取属性上的DisplayAttribute特性的Description值
+            </summary>
+            <typeparam name="T">要操作的对象类型</typeparam>
+            <param name="object">要操作的对象</param>
+            <param name="propertyName">属性名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.AttributeHelper.GetDisplayDescriptionWithProperty(System.Object,System.String,System.Boolean,System.Boolean)">
+            <summary>
+                获取属性上的DisplayAttribute特性的Description值
+            </summary>
+            <param name="object">要操作的对象</param>
+            <param name="propertyName">属性名称</param>
+            <param name="isCulture">是否使用资源文件</param>
+            <param name="inherit">是否同时查找从父类继承的特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.EnumHelper.GetEnumNames(System.Type)">
+            <summary>
+                获取枚举名称列表
+            </summary>
+            <param name="enumType">枚举类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.EnumHelper.GetEnumItems(System.Type)">
+            <summary>
+                获取枚举项
+            </summary>
+            <param name="enumType">枚举类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.EnumHelper.GetEnumItems``1">
+            <summary>
+                获取枚举项
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.EnumHelper.OrderEnumItems``1(``0[])">
+            <summary>
+                对枚举项目排序
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.EnumHelper.GetEnumFalgsItems``1(``0)">
+            <summary>
+                获取Flags枚举包含的全部枚举列表
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="enumValue"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:HuangSharp.Helpers.EnumHelper.GetEnumFalgsItems(System.Object)">
+            <summary>
+                获取Flags枚举包含的全部枚举列表
+            </summary>
+            <param name="enumValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.EnumHelper.IsEnumSingleValue``1(``0)">
+            <summary>
+                判断枚举是否包含多个值,Flags标识的枚举可能包含多个值
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="enumValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuangSharp.Helpers.EnumHelper.IsEnumSingleValue(System.Object)">
+            <summary>
+                判断枚举是否包含多个值,Flags标识的枚举可能包含多个值
+            </summary>
+            <param name="enumValue"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

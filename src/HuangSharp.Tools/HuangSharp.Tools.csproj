@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+        <AssemblyName>HuangSharp.Tools</AssemblyName>
+        <PackageId>HuangSharp.Tools</PackageId>
+        <Summary>HuangSharp 工具库</Summary>
+        <Description>HuangSharp 工具库，封装常用工具、扩展类</Description>
+    </PropertyGroup>
+
+</Project>

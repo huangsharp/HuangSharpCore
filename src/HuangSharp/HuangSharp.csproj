@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>HuangSharp</AssemblyName>
+        <PackageId>HuangSharp</PackageId>
+        <Summary>HuangSharp 工具库</Summary>
+        <Description>HuangSharp核心组件，封装着框架及数据存储，缓存，辅助操作等功能</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HuangSharp.Tools\HuangSharp.Tools.csproj" />
+    </ItemGroup>
+
+</Project>
